@@ -1,0 +1,43 @@
+:root{--r:#d6190f;--n:#1d2640;--t:#3b4252;--m:#6d7488;--l:#f6f7f9}
+*{box-sizing:border-box;min-width:0}body{overflow-x:hidden}html{scroll-behavior:smooth}
+body{margin:0;font:400 17px/1.6 "Helvetica Neue",Arial,system-ui,sans-serif;color:var(--t);background:#fff}
+h1,h2,h3{color:var(--n);line-height:1.15;margin:0 0 .5em}
+.top{position:sticky;top:0;z-index:9;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 5vw;background:rgba(255,255,255,.96);border-bottom:1px solid #e8eaee}
+.logo{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--n)}
+.logo strong{font-size:34px;letter-spacing:-.02em;line-height:1;padding-right:14px;border-right:1px solid #c9cdd6}.logo strong span{color:var(--r)}
+.logo em{font-style:normal;font-size:11px;letter-spacing:.32em;text-transform:uppercase;line-height:1.6;color:var(--n)}
+nav a{margin-left:22px;color:var(--n);text-decoration:none;font-size:14px;letter-spacing:.04em;text-transform:uppercase;padding:6px 0;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--r)}
+.hero{position:relative;display:grid;grid-template-columns:1.1fr 1fr;align-items:center;min-height:540px;overflow:hidden;background:#f1f1ee}
+.hero-t{padding:60px 5vw;position:relative;z-index:2}
+.hero h1{font-size:clamp(30px,4vw,50px);text-transform:uppercase;letter-spacing:-.01em;max-width:13em}
+.lead{font-size:20px;max-width:30em;margin:0 0 30px}
+.hero-i{position:absolute;right:0;top:0;bottom:0;width:58%}
+.hero-i img{width:100%;height:100%;object-fit:cover;object-position:50% 92%;display:block;-webkit-mask-image:linear-gradient(90deg,transparent,#000 38%);mask-image:linear-gradient(90deg,transparent,#000 38%)}
+.cta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:0}
+.btn{display:inline-block;background:var(--r);color:#fff;padding:15px 26px;text-decoration:none;font-weight:600;letter-spacing:.02em;border-radius:2px}
+.btn:hover{background:#b3130b}
+.ic{display:inline-flex;width:46px;height:46px;align-items:center;justify-content:center;color:var(--n)}
+svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.sec{padding:72px 5vw}.sec h2{font-size:clamp(26px,3vw,36px);text-align:center}
+.sub{text-align:center;color:var(--m);margin:0 auto 38px;max-width:40em}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:1280px;margin:0 auto}
+.tile{display:flex;align-items:flex-start;gap:14px;padding:18px;border:1px solid #e3e6ec;text-decoration:none;color:var(--t);background:#fff;transition:border-color .15s,box-shadow .15s;position:relative;min-height:104px}
+.tile:hover,.tile.sel{border-color:var(--r);box-shadow:0 6px 18px rgba(29,38,64,.08)}
+.tile svg{flex:none;color:var(--n);width:38px;height:38px}
+.tile b{display:block;color:var(--n);font-weight:600;line-height:1.25}.tile small{display:block;color:var(--m);font-size:14px;line-height:1.4;margin-top:4px}
+.tile i{font-style:normal;margin-left:auto;color:var(--n);align-self:center}
+.dets{max-width:820px;margin:0 auto}
+.det{display:none;margin-top:30px;padding:30px 34px;background:var(--l);border-left:4px solid var(--r)}.det.on{display:block}
+.det:focus{outline:none}.det h3{font-size:26px}
+.alt{background:var(--l)}.narrow{max-width:760px;margin:0 auto}.narrow h2{text-align:left}
+.dark{background:var(--n);color:#dfe3ee}.dark h2{color:#fff}.dark a:not(.btn){color:#fff}
+address{font-style:normal;font-size:19px;line-height:1.7;margin-bottom:1em}
+footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:22px 5vw;font-size:14px;color:var(--m);border-top:1px solid #e8eaee}
+@media(max-width:1000px){.tiles{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){
+.top{flex-direction:column;align-items:flex-start;padding:10px 5vw}.logo strong{font-size:28px}
+nav{display:flex;flex-wrap:wrap;gap:4px 16px}nav a{margin:0;font-size:13px}
+.hero{grid-template-columns:1fr;min-height:0}.hero-t{padding:36px 5vw 20px}
+.hero-i{position:static;width:100%;height:340px}.hero-i img{-webkit-mask-image:linear-gradient(180deg,transparent,#000 25%);mask-image:linear-gradient(180deg,transparent,#000 25%);object-position:50% 85%}
+.tiles{grid-template-columns:1fr}.sec{padding:52px 5vw}.det{padding:22px}}
