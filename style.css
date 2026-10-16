@@ -50,3 +50,9 @@ footer button{font:inherit;color:var(--n);background:none;border:1px solid #c9cd
 .hero-i{width:60%;padding-right:0;justify-content:flex-end}
 .hero-i img{width:100%;height:100%;object-fit:cover;object-position:50% 86%;-webkit-mask-image:linear-gradient(90deg,transparent,#000 24%);mask-image:linear-gradient(90deg,transparent,#000 24%);-webkit-mask-composite:source-over;mask-composite:add}
 @media(max-width:700px){.hero{min-height:0}.hero-i{width:100%;height:420px}.hero-i img{object-position:50% 80%;-webkit-mask-image:linear-gradient(180deg,transparent,#000 12%);mask-image:linear-gradient(180deg,transparent,#000 12%)}}
+.hero{min-height:560px;align-items:stretch}
+.hero-t{align-self:center}
+.hero-i{width:46%;padding:0 3vw 0 0;justify-content:flex-end;align-items:center}
+.hero-i img{width:auto;height:100%;max-width:100%;object-fit:contain;object-position:100% 50%;-webkit-mask-image:none;mask-image:none;filter:none}
+@media(max-width:700px){.hero{min-height:0}.hero-i{width:100%;height:480px;padding:0;justify-content:center}.hero-i img{object-position:50% 50%;-webkit-mask-image:none;mask-image:none}}
+.hero-i img{-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
