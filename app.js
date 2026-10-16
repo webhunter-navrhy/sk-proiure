@@ -1,1 +1,2 @@
+if(/[?&]logo=oranzove/.test(location.search))document.querySelector('.logo').classList.add('or');
 document.querySelectorAll('.tile').forEach(function(t){t.addEventListener('click',function(e){e.preventDefault();var id=t.dataset.open;document.querySelectorAll('.det').forEach(function(d){d.classList.toggle('on',d.id==='s-'+id)});document.querySelectorAll('.tile').forEach(function(x){x.classList.toggle('sel',x===t)});var d=document.getElementById('s-'+id);d.scrollIntoView({behavior:'smooth',block:'nearest'});d.focus({preventScroll:true})})});
