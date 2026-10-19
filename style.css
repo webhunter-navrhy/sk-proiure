@@ -93,3 +93,15 @@ footer button{font:inherit;color:var(--n);background:none;border:1px solid #c9cd
 .o-f{margin:0;padding-top:4px;border-top:1px solid var(--n)}.o-f div{padding:16px 0;border-bottom:1px solid #d9dce3}.o-f dt{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--m);margin-bottom:2px}.o-f dd{margin:0;color:var(--n);font-size:18px}
 @media(max-width:1000px){.o-grid,.o-grid.has-foto{grid-template-columns:1fr;gap:28px}}
 @media(max-width:700px){.tiles{grid-template-columns:1fr}.tile b{font-size:19px}}
+/* v12: služby po skupinách, jednotná šírka, Poradňa + Kontakt v jednom bloku */
+.groups{max-width:1040px;margin:0 auto;border-top:1px solid var(--n)}
+.grp{display:grid;grid-template-columns:1fr 2fr;gap:48px;padding:30px 0;border-bottom:1px solid #d9dce3}
+.grp-h h3{font:400 24px/1.2 Georgia,"Times New Roman",serif;margin:0 0 8px}.grp-h p{margin:0;color:var(--m);font-size:15px}
+.grp .tiles{grid-template-columns:1fr;border-top:0;max-width:none;margin:0}
+.grp .tile:first-child{padding-top:4px}.grp .tile:last-child{border-bottom:0}
+.dets{max-width:1040px}
+.k-grid{grid-template-columns:1fr 1fr}.k-b h2{text-align:left}.k-b address{margin-bottom:.6em}
+#kontakt.sec{border-top:1px solid #e8eaee}
+footer button{min-height:44px;padding:0 14px}
+@media(max-width:1000px){.grp,.k-grid{grid-template-columns:1fr;gap:14px}}
+.o-f a{display:inline-block;padding:11px 0}
