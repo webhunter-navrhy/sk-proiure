@@ -34,7 +34,7 @@ address{font-style:normal;font-size:19px;line-height:1.7;margin-bottom:1em}
 footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:22px 5vw;font-size:14px;color:var(--m);border-top:1px solid #e8eaee}
 @media(max-width:1000px){.tiles{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){
-.top{flex-direction:column;align-items:flex-start;padding:10px 5vw}nav{display:flex;flex-wrap:wrap;gap:4px 16px}nav a{margin:0;font-size:13px}
+.top{flex-direction:column;align-items:flex-start;padding:10px 5vw}nav{display:flex;flex-wrap:wrap;gap:4px 16px}nav a{margin:0;font-size:13px;padding:10px 0}.logo{padding:3px 0}
 .hero{grid-template-columns:1fr;min-height:0}.hero-t{padding:28px 5vw 0}
 .hero-i{position:static;width:100%;height:230px;margin-top:-10px}.hero-i img{-webkit-mask-image:linear-gradient(180deg,transparent,#000 30%,#000 65%,transparent),linear-gradient(90deg,transparent,#000 22%,#000 78%,transparent);mask-image:linear-gradient(180deg,transparent,#000 30%,#000 65%,transparent),linear-gradient(90deg,transparent,#000 22%,#000 78%,transparent);-webkit-mask-composite:source-in;mask-composite:intersect;object-position:50% 8%}
 .tiles{grid-template-columns:1fr}.sec{padding:52px 5vw}.det{padding:22px}}
@@ -58,3 +58,38 @@ footer button{font:inherit;color:var(--n);background:none;border:1px solid #c9cd
 .hero-i img{-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
 
 .tile.sel{border-color:var(--r);box-shadow:inset 0 0 0 1px var(--r),0 6px 18px rgba(214,25,15,.10);background:#fdf3f2}.tile.sel b,.tile.sel i{color:var(--r)}
+
+/* v9 (19. 10.): nové hero – bez labyrintu, fotka v správnom pomere, jednotné pozadie */
+.alt,.dark{background:#fff}.dark{color:var(--t)}.dark h2{color:var(--n)}.dark a:not(.btn){color:var(--n)}
+.sec.alt,.sec.dark{border-top:1px solid #e8eaee}
+.hero{min-height:0;align-items:center;background:#fff}
+.hero-i{position:relative;width:auto;height:auto;padding:0;display:flex;justify-content:center;align-items:flex-end}
+.hero-i img{width:auto;height:auto;max-width:100%;max-height:640px;object-fit:contain;-webkit-mask-image:none;mask-image:none;filter:none;display:block}
+@media(max-width:700px){.hero{grid-template-columns:1fr}.hero-i{width:100%;height:auto;margin-top:8px}.hero-i img{width:100%;height:auto;max-height:none;-webkit-mask-image:none;mask-image:none}}
+/* v10 mobil: plná bílá lišta, menu v jedné řadě, kontakty pod tlačítkem */
+.top{background:#fff}
+@media(max-width:700px){.top{padding:8px 5vw 0;gap:0}nav{flex-wrap:nowrap;width:100%;justify-content:space-between;gap:0}nav a{font-size:12px;letter-spacing:.02em;padding:11px 0}.cta .btn{width:100%;text-align:center;box-sizing:border-box}.cta .ic{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center}}
+/* v12 burger */
+.burger{display:none}
+@media(max-width:700px){.top{flex-direction:row;align-items:center;justify-content:space-between;padding:6px 5vw;position:sticky}.logo{max-width:70%}.burger{display:block;width:44px;height:44px;background:none;border:0;position:relative;cursor:pointer}.burger span,.burger span:before,.burger span:after{position:absolute;left:10px;width:24px;height:2px;background:var(--n);content:"";transition:.2s}.burger span{top:21px}.burger span:before{top:-7px;left:0}.burger span:after{top:7px;left:0}nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid #e8eaee;padding:4px 5vw 10px;flex-direction:column;width:auto}nav.open{display:flex}nav a{font-size:15px;padding:13px 0;min-height:44px;box-sizing:border-box;border-bottom:1px solid #f0f1f4}.cta .ic-t svg{width:24px}}
+/* v13 kontakty s popiskom */
+.cta .ic{width:auto;height:44px;padding:0 6px;gap:8px;font-size:15px;color:var(--n)}.cta .ic svg{width:22px;height:22px}
+@media(max-width:700px){.cta .ic{width:auto}}
+/* v11: služby typograficky (bez ikon), O mne bez fotky */
+.tiles{gap:0 48px;grid-template-columns:repeat(2,1fr);max-width:1040px;border-top:1px solid var(--n)}
+.tile{border:0;border-bottom:1px solid #d9dce3;background:transparent;padding:20px 6px;min-height:0;align-items:baseline;gap:18px;box-shadow:none;transition:background .15s,padding .15s}
+.tile:hover,.tile.sel{border-color:#d9dce3;box-shadow:none;background:transparent;padding-left:14px}
+.tile .n{font-style:normal;font:400 14px/1.6 Georgia,"Times New Roman",serif;color:var(--r);letter-spacing:.08em;flex:none;width:26px}
+.tile b{font:400 21px/1.25 Georgia,"Times New Roman",serif}
+.tile i{align-self:baseline;color:var(--m)}
+.tile:hover b,.tile:hover i{color:var(--r)}
+.tile.sel{background:transparent}.tile.sel b,.tile.sel i,.tile.sel .n{color:var(--r)}.tile.sel{border-bottom-color:var(--r)}
+.det{background:transparent;border-left:0;border-top:1px solid var(--n);padding:26px 4px}
+.det h3{font:400 28px/1.2 Georgia,"Times New Roman",serif}
+.o-grid{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:start}
+.o-grid.has-foto{grid-template-columns:260px 1.3fr 1fr}.o-foto{margin:0}.o-foto img{width:100%;height:auto;display:block}
+.o-t h2{text-align:left}.o-name{font:400 30px/1.2 Georgia,"Times New Roman",serif;color:var(--n);margin:0}.o-role{color:var(--r);text-transform:uppercase;letter-spacing:.14em;font-size:13px;margin:4px 0 20px}
+.o-t blockquote{margin:26px 0 0;padding:2px 0 2px 22px;border-left:3px solid var(--r);font:italic 400 21px/1.45 Georgia,"Times New Roman",serif;color:var(--n)}
+.o-f{margin:0;padding-top:4px;border-top:1px solid var(--n)}.o-f div{padding:16px 0;border-bottom:1px solid #d9dce3}.o-f dt{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--m);margin-bottom:2px}.o-f dd{margin:0;color:var(--n);font-size:18px}
+@media(max-width:1000px){.o-grid,.o-grid.has-foto{grid-template-columns:1fr;gap:28px}}
+@media(max-width:700px){.tiles{grid-template-columns:1fr}.tile b{font-size:19px}}
