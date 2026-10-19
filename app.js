@@ -1,3 +1,3 @@
 document.querySelectorAll('.tile').forEach(function(t){t.addEventListener('click',function(e){e.preventDefault();var id=t.dataset.open;document.querySelectorAll('.det').forEach(function(d){d.classList.toggle('on',d.id==='s-'+id)});document.querySelectorAll('.tile').forEach(function(x){x.classList.toggle('sel',x===t)});var d=document.getElementById('s-'+id);d.scrollIntoView({behavior:'smooth',block:'nearest'});d.focus({preventScroll:true})})});
 
-var lb=document.getElementById('logo-farba');lb.addEventListener('click',function(){var o=document.querySelector('.logo').classList.toggle('or');lb.textContent=o?'Logo: prepnúť na tmavé':'Logo: prepnúť na oranžové'});
+var lb=document.getElementById('logo-farba');lb.addEventListener('click',function(){var o=document.querySelector('.logo').classList.toggle('or');lb.textContent=o?'Logo: prepnúť na tmavé':'Logo: prepnúť na červené'});

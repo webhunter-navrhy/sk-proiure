@@ -56,3 +56,5 @@ footer button{font:inherit;color:var(--n);background:none;border:1px solid #c9cd
 .hero-i img{width:auto;height:100%;max-width:100%;object-fit:contain;object-position:100% 50%;-webkit-mask-image:none;mask-image:none;filter:none}
 @media(max-width:700px){.hero{min-height:0}.hero-i{width:100%;height:480px;padding:0;justify-content:center}.hero-i img{object-position:50% 50%;-webkit-mask-image:none;mask-image:none}}
 .hero-i img{-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+
+.tile.sel{border-color:var(--r);box-shadow:inset 0 0 0 1px var(--r),0 6px 18px rgba(214,25,15,.10);background:#fdf3f2}.tile.sel b,.tile.sel i{color:var(--r)}
