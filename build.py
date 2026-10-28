@@ -19,8 +19,8 @@ def v(p):
 I = {
  "zmluvy": '<path d="M13 3H5v18h8"/><path d="M13 3l5 5v3"/><path d="M13 3v5h5"/><path d="M8 9h3M8 13h6M8 17h3"/><path d="M14.5 21l.8-2.8 5.2-5.2 2 2-5.2 5.2z"/>',
  "analyza": '<circle cx="10" cy="10" r="6.2"/><path d="M14.6 14.6L21 21"/>',
- "konzultacie": '<circle cx="8" cy="7.5" r="2.8"/><circle cx="16.5" cy="7.5" r="2.8"/><path d="M2.5 19.5c0-3.2 2.5-5.5 5.5-5.5s5.5 2.3 5.5 5.5"/><path d="M13.6 14.5c.9-.4 1.9-.5 2.9-.5 3 0 5.5 2.3 5.5 5.5"/>',
- "pohladavky": '<ellipse cx="12" cy="5.8" rx="7" ry="2.6"/><path d="M5 5.8v4.1c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6V5.8"/><path d="M5 9.9v4.1c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6V9.9"/><path d="M5 14v4.1c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6V14"/>',
+ "konzultacie": '<circle cx="12" cy="8.2" r="3.3"/><path d="M6.2 20.5v-.6a5.8 5.8 0 0 1 11.6 0v.6"/><path d="M5.2 5.4a4.4 4.4 0 0 0 0 5.6"/><path d="M18.8 5.4a4.4 4.4 0 0 1 0 5.6"/><path d="M3.2 14.2A6.5 6.5 0 0 0 1.8 18"/><path d="M20.8 14.2a6.5 6.5 0 0 1 1.4 3.8"/>',
+ "pohladavky": '<ellipse cx="16" cy="5" rx="5.5" ry="2"/><path d="M10.5 5v3.4c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2V5"/><path d="M21.5 8.4v3.4c0 1.1-2.5 2-5.5 2"/><path d="M21.5 11.8v3.4c0 1.1-2.5 2-5.5 2"/><ellipse cx="8" cy="11.5" rx="5.5" ry="2"/><path d="M2.5 11.5v3.4c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2v-3.4"/><path d="M2.5 14.9v3.4c0 1.1 2.5 2 5.5 2s5.5-.9 5.5-2v-3.4"/>',
  "spolocnosti": '<circle cx="12" cy="7" r="2.7"/><circle cx="5.3" cy="9" r="2.1"/><circle cx="18.7" cy="9" r="2.1"/><path d="M7 20.5v-1.8a5 5 0 0 1 10 0v1.8"/><path d="M2 19.5v-.8a3.5 3.5 0 0 1 4.6-3.3"/><path d="M22 19.5v-.8a3.5 3.5 0 0 0-4.6-3.3"/>',
  "zivnostnici": '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0z"/>',
  "praca": '<rect x="3" y="7" width="18" height="13" rx="1.6"/><path d="M9 7V5.2C9 4.5 9.5 4 10.2 4h3.6c.7 0 1.2.5 1.2 1.2V7"/><path d="M3 12.5h18"/><path d="M10.5 11.5h3v2.4h-3z"/>',
@@ -106,10 +106,10 @@ html = f'''<!DOCTYPE html>
 </header>
 <main id="domov">
 <section class="hero">
-<picture class="hero-i"><source media="(max-width:820px)" srcset="img/hero-lab-m.webp?v={v("img/hero-lab-m.webp")}"><img src="img/hero-lab.webp?v={v("img/hero-lab.webp")}" width="1600" height="924" alt="Advokát s aktovkou kráča priamou cestou cez labyrint paragrafov k jemnej siluete justície s váhami"></picture>
+<picture class="hero-i"><source media="(max-width:820px)" srcset="img/hero-lab-m.webp?v={v("img/hero-lab-m.webp")}" width="800" height="742"><img src="img/hero-lab.webp?v={v("img/hero-lab.webp")}" width="2000" height="1135" alt="Advokát s aktovkou kráča priamou cestou cez labyrint paragrafov k jemnej siluete justície s váhami"></picture>
 <div class="hero-t">
 <h1>Priamou cestou k ochrane <span>Vašich práv a záujmov.</span></h1>
-<p class="lead">Napíšte nám, čo potrebujete, a my Vám poradíme, ako to dosiahnuť, pri minimalizácii právnych rizík.</p>
+<p class="lead">Napíšte nám, čo potrebujete, a my Vám poradíme, ako to dosiahnuť, <span>pri minimalizácii právnych rizík.</span></p>
 <p class="cta"><a class="btn" href="#kontakt">Dohodnite si konzultáciu <span aria-hidden="true">→</span></a><a class="ic" href="mailto:{MAIL}" aria-label="Napísať e-mail" title="{MAIL}">{MAILI}</a><a class="ic" href="tel:{TEL}" aria-label="Zavolať" title="{TEL_TXT}">{TELI}</a></p>
 </div>
 </section>
@@ -168,5 +168,17 @@ html = f'''<!DOCTYPE html>
 <script src="app.js?v={v("app.js")}"></script>
 </body></html>
 '''
+# Red Hat Display má mäkčeň v „ľ“ nalepený na ďalšie písmeno (číta sa „Nehnutelhosti“) → malý odstup, len v texte
+import re as _re
+def _tx(s):
+    s = _re.sub(r"(?<!\w)([kKsSvVzZoOuUaAiI]) ", "\\1\u00a0", s)   # jednopísmenné predložky a spojky
+    return s.replace("ľ", '<span class="lc">ľ</span>')
+def _lfix(h):
+    out, pos = [], 0
+    for m in _re.finditer(r"<(script|style|title)\b.*?</\1>|<[^>]+>", h, _re.S):
+        out.append(_tx(h[pos:m.start()])); out.append(m.group(0)); pos = m.end()
+    out.append(_tx(h[pos:]))
+    return "".join(out)
+html = _lfix(html)
 (D / "index.html").write_text(html)
 print("index.html", len(html))
